@@ -4,7 +4,8 @@ public class Cliente {
 	private String nome;
 	private String cpf;
 	private int idade;
-	String genero;
+	private String genero;
+	private boolean estaNoBar;
 	
 	public Cliente(String nome, String cpf, int idade, String genero) {
 		super();
@@ -12,6 +13,7 @@ public class Cliente {
 		this.cpf = cpf;
 		this.idade = idade;
 		this.genero = genero;
+		estaNoBar = true;
 	}
 
 
@@ -29,6 +31,10 @@ public class Cliente {
 
 	public String getGenero() {
 		return genero;
+	}
+	
+	public void saiBar() {
+		estaNoBar = false;
 	}
 	
 }

@@ -20,8 +20,21 @@ public class Bar {
 		return false;
 	}
 	// quantidade de pessoas
-	
-	// distribuição por genero(percentual de clientes masculino e feminino)
+	public int nroPessoas() {
+		return listaClientes.size();
+	}
+		
+	// distribuição por genero(percentual de clientes masculino e feminino) *DEVOLVE PORCENTAGEM MASCULINA*
+	public double porcentagemSexo() {
+		int aux = 0;
+		for (Cliente c : listaClientes) {
+			if(c.getGenero().equals('M')) {
+				aux++;
+			}
+		}
+		
+		return (aux*listaClientes.size())/100;
+	}
 	
 	// status de sócio (quantos são sócios, e quantos não são).
 	
@@ -33,5 +46,14 @@ public class Bar {
 			}	
 		}
 		return socio;
+	}
+	
+	// metodo que registra a saida do bar "Ao sair, o cliente deve informar seu CPF, para registrar sua saída."
+	public void saiuDoBar(String CPF) {
+		for (Cliente c : listaClientes) {
+			if(c.getCpf().equals(CPF)) {
+				c.saiBar();
+			}
+		}
 	}
 }
